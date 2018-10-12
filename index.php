@@ -1,11 +1,12 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
-<html>
+<!DOCTYPE html>
+<html lang="zh-CN">
 <head>
-	<meta charset="UTF-8">
-	<title>Markdown Reading</title>
+	<meta charset="utf-8">
+	<title>Markdown Reading - 开发笔记文档</title>
 	<meta name="renderer" content="webkit">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-	<link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/4.1.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="//cdn.staticfile.org/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 	<style>
 		address {
 			margin-bottom: 20px;
@@ -66,6 +67,15 @@
 			border-radius: 0
 		}
 
+		.catalog{}
+
+		.content{}
+			.content h1{ margin-bottom: 2rem; }
+			.content h2{ margin: 1.5rem 0; padding-left: 10px; padding-right: 10px; display: inline-block; box-shadow: inset 0 -8px 0 #b0d3ff; }
+			.content h3{ margin: 1rem 0; font-size: 1.5rem; }
+			.content h4{ margin: 0.8rem 0; font-size: 1.2rem; }
+			.content h5{ margin: 0.5rem 0; }
+
 	</style>
 </head>
 <body>
@@ -86,15 +96,25 @@ $local = $base . $file .'.md';
 <div class="my-3 mx-3"></div>
 
 <div class="container" id="app">
+
+	<div class="catalog">
 		
 	<?php
 	$list = glob( $base.'*.md' );
 	foreach( $list as $k => $v ){
-		echo '<a class="btn btn-sm m-1 '. ( basename($v, '.md') == $file ? 'btn-secondary' : 'btn-outline-secondary' ) .'" href="'. basename( $v ) .'" role="button">'. basename($v, '.md') .'</a>';
+		echo '<a class="btn btn-sm m-1 '. ( basename($v, '.md') == $file ? 'btn-secondary' : 'btn-light' ) .'" href="'. basename( $v ) .'" role="button">'. basename($v, '.md') .'</a>';
 	}
 	?>
 
+	</div>
+
+	<!-- 网文精选_自适应 -->
+	<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7104481011578148" data-ad-slot="7430051000" data-ad-format="auto" data-full-width-responsive="true"></ins>
+	<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
 	<hr />
+
+	<div class="content">
 
 	<?php if( file_exists( $local ) ): ?>
 		
@@ -118,7 +138,13 @@ $local = $base . $file .'.md';
 		</div>	  
 		<p>Stay Hungry. Stay Foolish.</p>
 		
-	<?php endif; ?>	
+	<?php endif; ?>
+
+	<!-- 网文精选_自适应 -->
+	<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7104481011578148" data-ad-slot="7430051000" data-ad-format="auto" data-full-width-responsive="true"></ins>
+	<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+	</div>
 
 </div>
 
