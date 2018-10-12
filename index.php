@@ -153,7 +153,7 @@ $local = $base . $file .'.md';
 	<p class="text-center"><i>Powered by <a href="http://www.veryide.com/" target="_blank">VeryIDE</a></i></p>
 </footer>
 
-<script src="./project/app.js"></script>
+<script src="/project/app.js"></script>
 
 </body>
 </html>
