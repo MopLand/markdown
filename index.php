@@ -1,8 +1,31 @@
-<!DOCTYPE html>
+<?php
+
+$base = './../notes/';
+$file = isset( $_GET['file'] ) ? $_GET['file'] : NULL;
+$local = $base . $file .'.md';
+$subject = $content = NULL;
+
+if( file_exists( $local ) ){
+
+	require_once 'Parsedown.php';
+
+	$Parsedown = new Parsedown();
+	$source = file_get_contents( $local, FILE_USE_INCLUDE_PATH);
+
+	$content = $Parsedown->text($source);
+	$content = str_replace( '<table>', '<table class="table table-striped">', $content );
+
+	preg_match( '/<h1>(.+?)<\/h1>/', $content, $match );
+
+	$subject = $match[1];
+
+}
+
+?><!DOCTYPE html>
 <html lang="zh-CN">
 <head>
 	<meta charset="utf-8">
-	<title>Markdown Reading - 开发笔记文档</title>
+	<title><?php echo $subject ? $subject: 'Markdown Reading'; ?> - 开发笔记文档</title>
 	<meta name="renderer" content="webkit">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<link rel="stylesheet" href="//cdn.staticfile.org/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
@@ -71,7 +94,7 @@
 
 		.content{}
 			.content h1{ margin-bottom: 2rem; }
-			.content h2{ margin: 1.5rem 0; padding-left: 10px; padding-right: 10px; display: inline-block; box-shadow: inset 0 -8px 0 #b0d3ff; }
+			.content h2{ margin: 1.5rem 0; font-size: 1.8rem; padding-left: 10px; padding-right: 10px; display: inline-block; box-shadow: inset 0 -8px 0 #b0d3ff; }
 			.content h3{ margin: 1rem 0; font-size: 1.5rem; }
 			.content h4{ margin: 0.8rem 0; font-size: 1.2rem; }
 			.content h5{ margin: 0.5rem 0; }
@@ -79,12 +102,6 @@
 	</style>
 </head>
 <body>
-
-<?php
-$base = './../notes/';
-$file = isset( $_GET['file'] ) ? $_GET['file'] : NULL;
-$local = $base . $file .'.md';
-?>
 
 <nav aria-label="breadcrumb">
 	<ol class="breadcrumb">
@@ -116,14 +133,9 @@ $local = $base . $file .'.md';
 
 	<div class="content">
 
-	<?php if( file_exists( $local ) ): ?>
+	<?php if( $content ): ?>
 		
-		<?php
-			require_once 'Parsedown.php';
-			$Parsedown = new Parsedown();
-			$source = file_get_contents( $local, FILE_USE_INCLUDE_PATH);
-			echo $Parsedown->text($source);
-		?>
+		<?php echo $content; ?>
 		
 		<hr />
 		
