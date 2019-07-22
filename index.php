@@ -98,6 +98,7 @@ if( file_exists( $local ) ){
 			.content h3{ margin: 1rem 0; font-size: 1.5rem; }
 			.content h4{ margin: 0.8rem 0; font-size: 1.2rem; }
 			.content h5{ margin: 0.5rem 0; }
+			.content img{ max-width:100%; }
 
 	</style>
 </head>
