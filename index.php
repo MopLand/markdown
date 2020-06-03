@@ -99,6 +99,15 @@ if( file_exists( $local ) ){
 			.content h4{ margin: 0.8rem 0; font-size: 1.2rem; }
 			.content h5{ margin: 0.5rem 0; }
 			.content img{ max-width:100%; }
+			
+		footer .shape{ position:fixed; bottom:50px; right:30px; text-align:center; font-size:16px; line-height:40px; }
+			footer .shape a{ width:40px; padding:0; color:#FFF!important; background:#DDD; border-radius:50%; margin-bottom: 1rem; font-weight:normal; cursor:pointer; display: inline-block; transition:all .3s; }
+			footer .shape a:hover{ background:#CCC; transform:scale(1.3,1.3);}
+
+			footer .shape a.search{ display:none; }
+
+			footer .shape a.gotop{ transform:rotate(90deg); display:none; }
+			footer .shape a.gotop:hover{ transform:rotate(90deg) scale(1.3,1.3);}
 
 	</style>
 </head>
@@ -163,6 +172,10 @@ if( file_exists( $local ) ){
 
 <hr />
 <footer>
+	<div class="shape">
+		<a class="search">Q</a>
+		<a class="gotop">&#10094;</a>
+	</div>
 	<p class="text-center"><i>Powered by <a href="http://www.veryide.com/" target="_blank">VeryIDE</a></i></p>
 </footer>
 
