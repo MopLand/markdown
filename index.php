@@ -102,8 +102,8 @@ if( file_exists( $local ) ){
 			.content img{ max-width:100%; }
 			
 		footer .shape{ position:fixed; bottom:50px; right:30px; text-align:center; font-size:16px; line-height:40px; }
-			footer .shape a{ width:40px; padding:0; color:#FFF!important; background:#DDD; border-radius:50%; margin-bottom: 1rem; font-weight:normal; cursor:pointer; display: inline-block; transition:all .3s; }
-			footer .shape a:hover{ background:#CCC; transform:scale(1.3,1.3);}
+			footer .shape a{ width:40px; padding:0; color:#FFF!important; background:#DDD; border-radius:50%; margin-bottom: 1rem; font-weight:normal; cursor:pointer; display: inline-block; transition:all .3s; opacity:.5; }
+			footer .shape a:hover{ background:#CCC; transform:scale(1.3,1.3); opacity:.85;}
 
 			footer .shape a.search{ display:none; }
 
