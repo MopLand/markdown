@@ -30,6 +30,7 @@ if( file_exists( $local ) ){
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<link rel="stylesheet" href="//cdn.staticfile.org/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
 	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<script src="//public.rexcdn.com/js/ray.js"></script>
 	<style>
 		address {
 			margin-bottom: 20px;
