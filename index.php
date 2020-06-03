@@ -123,7 +123,7 @@ if( file_exists( $local ) ){
 
 <div class="my-3 mx-3"></div>
 
-<div class="container" id="app">
+<div class="container">
 
 	<div class="catalog">
 		
@@ -142,7 +142,7 @@ if( file_exists( $local ) ){
 
 	<hr />
 
-	<div class="content">
+	<div class="content" id="app">
 
 	<?php if( $content ): ?>
 		
