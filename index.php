@@ -142,7 +142,7 @@ if( file_exists( $local ) ){
 
 	<hr />
 
-	<div class="content" id="app">
+	<div class="content">
 
 	<?php if( $content ): ?>
 		
